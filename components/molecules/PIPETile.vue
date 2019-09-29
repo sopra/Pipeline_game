@@ -61,7 +61,6 @@ export default {
       this.pipePattern.forEach((v) => {
         v.unshift(v.pop())
       })
-      console.log(this.pipePattern)
     }
   }
 }
