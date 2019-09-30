@@ -9,6 +9,7 @@
         <circle cx="0" :cy="cellSize" :r="cellSize * 0.35" fill="white" />
       </g>
       <g v-else-if="pipeData[0] === pipeData[2]" :stroke="pipeStrokeColor">
+
         <rect :x="cellSize * 0.35" y="0" :width="(cellSize * 0.30)" :height="cellSize" :fill="colorSchema[pipeData[0]]" />
         <rect x="0" :y="cellSize * 0.35" :width="cellSize" :height="(cellSize * 0.30)" :fill="colorSchema[pipeData[1]]" />
       </g>
@@ -53,9 +54,17 @@ export default {
     //
     // pipe data struct
     //
-    // [ 0, 0, 1, 1 ]
-    // 0 => orange1, 1 => silver1, 2 => blue1, 3 => orange2, 4 => silver2, 5 => blue2
+    // [ 1, 1, 2, 2 ]
     // [0] => top, [1] => right, [2] => down, [4] => left
+    // 0 -> null
+    // 1 -> orange1
+    // 2 -> silver1
+    // 3 -> blue1
+    // 4 -> orange2
+    // 5 -> silver2
+    // 6 -> blue2
+    // 7 -> machine
+    //
     pipeData: {
       type: Array,
       required: true,

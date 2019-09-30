@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <PIPETile :pattern="[ [0, 0, 1, 1], [2, 3, 2, 3] ]" />
+      <PIPETile :pattern="tiles" />
     </div>
   </div>
 </template>
@@ -15,7 +15,16 @@ export default {
     PIPETile
   },
   data () {
-    return {}
+    return {
+      tiles: []
+    }
+  },
+  mounted () {
+    this.$store.commit('pipes/shuffle')
+    this.tiles = Object.assign(this.tiles, this.$store.state.pipes.pipes[0])
+    this.$store.commit('pipes/get')
+    console.log(this.$store.state.pipes.pipes[0])
+    console.log(this.tiles)
   }
 }
 </script>
