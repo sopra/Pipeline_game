@@ -3,6 +3,7 @@ const orange = 'orange'
 const silver = 'silver'
 
 const dataSet = [
+  'black',
   orange,
   silver,
   blue,

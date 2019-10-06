@@ -2,14 +2,14 @@
   <svg v-if="pipeDirection === 'vertical'" :width="cellSize" :height="cellSize * 2" @click="rotate">
     <g>
       <g v-for="(datum, index) in pipePattern" :key="index" :transform="'translate(0, ' + index * cellSize + ')'">
-        <PIPECell :ref="'cell' + index" :pipe-data="datum" />
+        <PIPECell :ref="'cell' + index" :pipe-data="datum" :cell-size="cellSize" />
       </g>
     </g>
   </svg>
   <svg v-else :width="cellSize * 2" :height="cellSize" @click="rotate">
     <g>
       <g v-for="(datum, index) in pattern" :key="index" :transform="'translate(' + index * cellSize + ', 0)'">
-        <PIPECell :ref="'cell' + index" :pipe-data="datum" />
+        <PIPECell :ref="'cell' + index" :pipe-data="datum" :cell-size="cellSize" />
       </g>
     </g>
   </svg>

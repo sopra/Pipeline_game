@@ -14,10 +14,10 @@
         <rect x="0" :y="cellSize * 0.35" :width="cellSize" :height="(cellSize * 0.30)" :fill="colorSchema[pipeData[1]]" />
       </g>
       <g v-else :stroke="pipeStrokeColor">
-        <circle cx="0" cy="0" r="65" :fill="colorSchema[pipeData[3]]" />
-        <circle cx="0" cy="0" r="35" fill="white" />
-        <circle :cx="cellSize" :cy="cellSize" r="65" :fill="colorSchema[pipeData[1]]" />
-        <circle :cx="cellSize" :cy="cellSize" r="35" fill="white" />
+        <circle cx="0" cy="0" :r="cellSize * 0.65" :fill="colorSchema[pipeData[3]]" />
+        <circle cx="0" cy="0" :r="cellSize * 0.35" fill="white" />
+        <circle :cx="cellSize" :cy="cellSize" :r="cellSize * 0.65" :fill="colorSchema[pipeData[1]]" />
+        <circle :cx="cellSize" :cy="cellSize" :r="cellSize * 0.35" fill="white" />
       </g>
     </g>
   </svg>
